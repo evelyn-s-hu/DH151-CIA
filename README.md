@@ -43,6 +43,7 @@ Web mapping is an effective tool that allows us to display spatial and geographi
 Given that trends of anti-Asian hate crimes and incidents are very much tied to geography and the demographics of an area, web mapping would be an essential tool in helping us visualize and understand those trends. If we choose to incorporate census and demographic data into our map, in addition to data on hate incidents, we would also be able to layer the maps and analyze the correlation between both variables.  
 
 ## Workflow
+  
 | Milestone | Tasks to Complete |
 | --- | --- |
 | Week 2 | Create project proposal <br> Identify potential data sets |
