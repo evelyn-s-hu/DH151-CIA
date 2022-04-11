@@ -57,9 +57,9 @@ Given that trends of anti-Asian hate crimes and incidents are very much tied to 
 
 ## Technical Scope
 Our project will utilize the following technologies:  
-Git for collaboration and to share our work with one another  
-Leaflet (or Tableau) for its web-mapping applications  
-HTML, CSS and Javascript to design and present our final product on a website  
+- Git for collaboration and to share our work with one another  
+- Leaflet (or Tableau) for its web-mapping applications  
+- HTML, CSS and Javascript to design and present our final product on a website  
 
 ## Geographic Scope 
 Our project may either focus on a number of states in America, or on a specific state if we are able to obtain a dataset with county-level data on hate crimes.  
