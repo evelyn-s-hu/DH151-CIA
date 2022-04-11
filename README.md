@@ -25,7 +25,7 @@ There are several topics we are interested in revolving around the topic of hate
 - Comparing hate crime/ incidents in 2-5 states by layering maps of hate crime/ incidents and the demographics of certain racial or social groups in order to analyze the potential correlation between the trend of hate crimes/ incidents and the demographic of the people living there. Potential research questions:  
   - Is there a correlation between the racial demographic of a state and the amount of hate crimes/ incidents committed against each racial group?  
   - How do we explain this correlation?  
-- Media reports of hate crimes across the US and the disparity in reports made by local law enforcement agencies. In this case, media reports substitute the personal accounts of hate crimes experienced and may include data that is not necessarily reported in official police data (“Why people don’t report hate incidents”). The research questions we’d like to answer is: 
+- Media reports of hate crimes across the US and the disparity in reports made by local law enforcement agencies. In this case, media reports substitute the personal accounts of hate crimes experienced and may include data that is not necessarily reported in official police data ("[Why people don’t report hate incidents](https://www.propublica.org/article/confusion-fear-cynicism-why-people-dont-report-hate-incidents)"). The research questions we’d like to answer is: 
   - Where are hate crimes being the most reported in the United States?  
   - How do the amount of hate crimes being reported compare to the corresponding minority population? (Is there a large Asian population in an area that experiences many reports of Asian hate crimes?)  
   - How does the media data compare to police data? Is data missing from one or the other sources?  
@@ -62,4 +62,4 @@ HTML, CSS and Javascript to design and present our final product on a website
 Our project may either focus on a number of states in America, or on a specific state if we are able to obtain a dataset with county-level data on hate crimes.  
 
 ## Data
-The relevant dataset that will be included in the project are Documenting Hate News Index (Raw Data), Hate Crimes Reported to the FBI, 2019 FBI Hate Crime Statistics. 
+The relevant dataset that will be included in the project are [Documenting Hate News Index (Raw Data)](https://www.propublica.org/datastore/dataset/documenting-hate-news-index), [Hate Crimes Reported to the FBI](https://projects.propublica.org/graphics/hatecrime-data), [2019 FBI Hate Crime Statistics](https://ucr.fbi.gov/hate-crime/2019/downloads/downloads). 
