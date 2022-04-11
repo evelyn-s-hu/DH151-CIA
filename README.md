@@ -19,8 +19,9 @@ Role: Content Developer
 Evelyn is a fourth year Cognitive Science major specializing in Computing. After taking a course about the Asian American Movement last quarter, and as an Asian American herself, she was inspired to conduct further research into the struggles faced by Asian Americans during a time of heightened hate during the pandemic.  
   
 **Laura Lu**  
+<img src="/images/LauraLu.jpg" width="350">  
 Role: Webmaster (?)  
-[insert blurb]  
+Laura is a second year Computer Science major. Being an Asian American herself, this topic hits close to home. With the rise of Asian American hate crimes committed during this last year as a result of the pandemic, she is especially interested in bringing more awareness to both the struggles the AAPI community is facing and their strength in light of it all.  
 
 ## Overview
 The term “Asian American” was coined by activists in the 1960s, intended to bring together ethnic subgroups so that they could fight for equality together. While Asian Americans have attained positive change in public sentiment throughout the years, they still face discrimination even today. Following the COVID-19 pandemic, reported cases of racially motivated violence against Asian Americans increased dramatically, as Asian people were scapegoated and blamed for the spread of the virus. The rampant discrimination against Asians and Asian Americans has sparked the Stop Asian Hate movement, but reports of racially motivated hate crimes are still commonplace.  
