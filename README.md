@@ -4,14 +4,17 @@ The team would like to delve deeper into the topic of hate crimes and incidents,
 
 ## Members
 **Keona Mae Pablo**  
+<img src="/images/KeonaMae.png" width="350">  
 Role: Project Manager  
 Keona Mae is a 4th year Cognitive Science major with a specialization in computing and minor in Digital Humanities. As an Asian American woman, the rise of Asian American hate crimes through the pandemic shocked her. Through this project she hopes to bring to light many of the struggles minorities face across the country and investigate ways we can create an inclusive environment for all people.  
   
 **Audrey Tey**  
+<img src="/images/AudreyTey.jpg" width="350">  
 Role: Data Visualization Specialist  
 Audrey is a third-year Sociology and Statistics student, minoring in Digital Humanities. Through the project, she would like to find out more about the trends and statistics surrounding anti-Asian hate incidents, and investigate if anything can be done to alleviate such discrimination.  
   
 **Evelyn Hu**  
+<img src="/images/EvelynHu.jpg" width="350">  
 Role: Content Developer  
 Evelyn is a fourth year Cognitive Science major specializing in Computing. After taking a course about the Asian American Movement last quarter, and as an Asian American herself, she was inspired to conduct further research into the struggles faced by Asian Americans during a time of heightened hate during the pandemic.  
   
