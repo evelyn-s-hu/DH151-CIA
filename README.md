@@ -20,7 +20,7 @@ Evelyn is a fourth year Cognitive Science major specializing in Computing. After
   
 **Laura Lu**  
 <img src="/images/LauraLu.jpg" width="350">  
-Role: Webmaster (?)  
+Role: Webmaster  
 Laura is a second year Computer Science major. Being an Asian American herself, this topic hits close to home. With the rise of Asian American hate crimes committed during this last year as a result of the pandemic, she is especially interested in bringing more awareness to both the struggles the AAPI community is facing and their strength in light of it all.  
 
 ## Overview
