@@ -10,7 +10,7 @@ Keona Mae is a 4th year Cognitive Science major with a specialization in computi
   
 **Audrey Tey**  
 <img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/AudreyTey.jpg?raw=true" width="350">  
-Role: Data Visualization Specialist  
+Role: Data Specialist  
 Audrey is a third-year Sociology and Statistics student, minoring in Digital Humanities. Through the project, she would like to find out more about the trends and statistics surrounding anti-Asian hate incidents, and investigate if anything can be done to alleviate such discrimination.  
   
 **Evelyn Hu**  
