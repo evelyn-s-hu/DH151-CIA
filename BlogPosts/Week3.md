@@ -10,19 +10,23 @@ In addition, there could be other visualizations such as bar graphs of hate crim
 Another dataset we found was the <a href="https://www.splcenter.org/hate-map">Hate Map</a> by the Southern Poverty Law Center. It provides data on hate groups and the motivations linked to hate crimes. Data can be filtered by year and other variables and downloaded from the site. If our narrative is not rich enough, we hope to supplement the map with data from this site on the hate groups present in each state and perhaps look at how hate groups account for the number of hate crimes in each city.  
   
 We also were able to find inspiration from a variety of websites, all of which have given us direction in what we want to include in our website. Firstly, we found a map that displayed different reported incidents of Asian American hate crimes across the US: https://racismiscontagious.com/map.html. Unlike regular maps where there is just a heat map to signify that there is a crime committed at that place, this map allows you to click and have a pop up providing you with more detail about the hate crime - much like what we learn in class! Our data set is relatively similar to this, so we also are inspired to synthesize our information in a similar way. We also really liked the design of the dots - how there was a glow around them so when there is a high concentration of crimes, there would be a greater glow.  
-  <img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/">  
-  
+
+<img width="685" alt="Screen Shot 2022-04-17 at 8 46 45 PM" src="https://user-images.githubusercontent.com/81529754/163751406-34aef809-7cec-4074-9674-25ece35b258d.png">
+
 Another inspirational website was the Manhattan Population exploration. The map used 3D blocks to demonstrate how there was constant migration inside the city everyday - with each block representing the density of the population in the area. It was extremely interesting to see information being communicated in a 3D form instead of 2D form and how it is easier to compare the density in this form across many areas in the city.  
-  <img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/">  
-  
+ <img width="1436" alt="Screen Shot 2022-04-16 at 5 04 20 PM" src="https://user-images.githubusercontent.com/81529754/163751500-5f7e823c-3ad9-4236-bc27-b5487f9f74b7.png">
+
+ 
 While we cannot directly apply this to our website, it has given us food for thought on how we can use bar graphs to display our data. We are currently considering having a bar graph in a small section to show “filter” the data even more to display the number of anti race crimes against different races similar to the diagram in the top left below:  
-  <img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/">  
-  
+<img width="1006" alt="Screen Shot 2022-04-16 at 5 09 32 PM" src="https://user-images.githubusercontent.com/81529754/163751544-5d431a5a-c625-4419-b258-cde91bc6432f.png">
+
+
 Something that was a source of inspiration about this page was how the data was consolidated in two ways: both 2D and 3D. So perhaps, we can use circles to indicate specific cases but also summarize it by using different colors to indicate the number of cases in each state.  
   
 Since we were also thinking of including a temporal slider, the way that they told a story with time as a variable was also very compelling. There is a small anecdotal at each time period that gives a more qualitative explanation about the data. We hope to do something similar and create a narrative that appeals to the ethos, pathos and logos of our users:  
-   <img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/">  
-  
+
+<img width="685" alt="Screen Shot 2022-04-17 at 8 49 09 PM" src="https://user-images.githubusercontent.com/81529754/163751573-d9009dd4-6167-4a8d-a7b7-a77607dbdb2c.png">
+
 This next week, we will begin designing our web page and begin working on the web design. Currently, we plan to break our site down into different subpages, consisting of a landing page; a page to display our map of hate crimes by state; a page displaying graphs for further narrative building and analyses; a page for background information on hate crimes; as well as a page introducing the team members and our sources. When viewing sites that display maps, such as the ones shown above, we noticed that the overall color schemes used are grayscale and overall on the darker side, in order to make metrics displayed on the graph stand out more. This is something that we will take into consideration when building our web design, so that we can convey our information in a way that makes it interesting and appealing to the eye.  
 
 Our goal in creating our website is to highlight the trends of hate crimes over time and by motivation. During the pandemic, we saw an increase in hate crimes especially toward Asian Americans, and as Asian American students ourselves, we were devastated by this news and were inspired to investigate the trends and statistics more deeply. In the media, information about hate crimes are often shared in individual stories and articles, making it difficult to understand the data as a whole and where they occur in relation to each other geographically. However, we hope to make this process easier by having a centralized location for visualizations and statistics of hate crimes across the US. Visitors to our site will be able to clearly see patterns of the crimes. Not only can people use our site to make informed decisions on travels through the US, but others just like ourselves may be inspired by our reports and find motivation to support causes that work to decrease discrimination and create ways to make a more inclusive environment in America. At the very least, we hope our site can bring to light many of the struggles minorities face across the country.
