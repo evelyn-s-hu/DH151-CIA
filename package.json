@@ -1,0 +1,20 @@
+{
+  "name": "dh151-cia",
+  "version": "1.0.0",
+  "description": "The team would like to delve deeper into the topic of hate crimes and incidents, specifically those motivated by anti-Asian sentiments.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node your-script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evelyn-s-hu/DH151-CIA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evelyn-s-hu/DH151-CIA/issues"
+  },
+  "homepage": "https://github.com/evelyn-s-hu/DH151-CIA#readme"
+}
