@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- style sheets -->
+<link rel="stylesheet" href="css/maproom.css">
+
+<!-- leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<!-- papaparse for csv data -->
+<script src="js/papaparse.min.js"></script>
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<header class="header">
+  <h1 class="logo"><a href="#">CIA</a></h1>
+    <ul class="main-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="#">Map Room</a></li>
+        <li><a href="#">Data Critique</a></li>
+    </ul>
+</header> 
+<div class="content">
+    <div id="map"></div>
+</div>
+
+<script src="js/maproom.js"></script>
+
+</body>
+</html>
