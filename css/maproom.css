@@ -36,11 +36,13 @@
     padding: 10px 15px;
     text-align: center;
     display: block;
+    color: white;
+    font-size: 0.5em;
   }
   
   .main-nav a {
-    color: #34495e;
-    font-size: 0.99em;
+    color: white;
+    font-size: 0.5em;
   }
   
   .main-nav a:hover {
@@ -51,7 +53,6 @@
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     background-color: #f4f4f4;
-    border-radius: 5px;
   }
   
   /* ================================= 
@@ -88,18 +89,17 @@
 }
 
 body {
+  /* display:grid; */
 	display: grid;
-	grid-template-rows: 60px 1fr 40px;
+	grid-template-rows: 60px 1fr;
 	grid-template-columns: 300px 1fr;
 	grid-template-areas: 
 	"header header"
-	"sidebar content"
-	"footer footer";
+	"content content"
 }
 
 .header {
 	grid-area: header;
-	padding:10px;
 	background-color: #333;
 	color: white;
 	font-size: 2em;
@@ -115,12 +115,6 @@ body {
 
 .content {
 	grid-area: content;
-}
-
-.footer {
-	grid-area: footer;
-	padding:10px;
-	background-color: rgb(175, 175, 175);
 }
 
 .sidebar-item {	/* border: 1px solid gray; */

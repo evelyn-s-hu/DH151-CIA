@@ -1,7 +1,7 @@
 // Global variables
 let map;
-let lat = 0;
-let lon = 0;
+let lat = 37;
+let lon = -95;
 let zl = 3;
 let path = "data/bias.csv";
 // let markers = L.featureGroup();
@@ -27,8 +27,7 @@ let layers = {
 // initialize
 $(document).ready(function () {
   createMap(lat, lon, zl);
-  //   readCSV(path);
-  //   plotMap();
+  readCSV();
 });
 
 // create the map
@@ -43,8 +42,10 @@ function createMap(lat, lon, zl) {
   L.control.layers(null, layers).addTo(map);
 }
 
+
 // function to read csv data
 function readCSV() {
+  console.log("readCSV")
   Papa.parse(path, {
     header: true,
     download: true,
@@ -63,7 +64,7 @@ function readCSV() {
       let unique = [
         ...new Map(alldata.map((item) => [item.city, item])).values(),
       ];
-      console.log(unique);
+      // console.log(unique);
 
       //initialize the values
       unique.forEach(function (item, index) {
@@ -103,27 +104,37 @@ function readCSV() {
           racefilter[number].total++;
         }
       });
+      plotMap();
     },
   });
 }
 
 function plotMap() {
   // loop through data
+  console.log(racefilter.length);
 
-  console.log("i'm plotting right now!");
-  console.log(racefilter);
+  console.log(racefilter[0]);
   racefilter.forEach(function (item) {
     // create marker
-    let marker = L.marker([item.lat, item.long])
+    let circleOptions = {
+      radius: item.total/50,
+      weight: 1,
+      color: 'white',
+      fillColor: 'red',
+      fillOpacity: 0.5
+    }
+
+    let marker = L.circleMarker([item.lat, item.long], circleOptions)
       .bindPopup(
-        `<h3>${item.city}</h3><p><strong>Anti Asian: </strong>${item.asian}</p><p><strong>Anti-Black or African American: </strong>${item.black}</p><p><strong>Anti-American Indian or Alaska Native: </strong>${item.amind}</p>`
+        `<h3>${item.city}</h3><p><strong>Anti Asian: </strong>${item.asian}</p><p><strong>Anti-Black or African American: </strong>${item.black}</p><p><strong>Anti-American Indian or Alaska Native: </strong>${item.amind}</p><p><strong>Anti-Multiple Races, Group: </strong>${item.mult}</p><p><strong>Anti-Hispanic or Latino: </strong>${item.hisp}</p>`
       )
       .openPopup();
-
     // add marker to featuregroup
     antiRace.addLayer(marker);
   });
 
   // after loop, add the FeatureGroup to map
   antiRace.addTo(map);
+  // fit map to markers
+	map.fitBounds(antiRace.getBounds())
 }
