@@ -1,78 +1,90 @@
 * {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: "Montserrat", sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    min-height: 100vh;
-  }
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  h2,
-  h3,
-  a {
-    color: #34495e;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  .logo {
-    margin: 0;
-    font-size: 1.45em;
-  }
-  
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h2,
+h3,
+a {
+  color: #34495e;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.45em;
+}
+
+.main-nav {
+  margin-top: 5px;
+}
+.logo a,
+.main-nav a {
+  padding: 10px 15px;
+  text-align: center;
+  display: block;
+}
+
+.main-nav a {
+  color: #34495e;
+  font-size: 0.99em;
+}
+
+.main-nav a:hover {
+  color: #718daa;
+}
+
+.header {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+.bio_container{
+  display: flex;
+  padding-top:40px;
+}
+
+.bio_container img{
+  border-radius: 100px;
+}
+
+.bio_container p{
+  padding: 20px;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+  .header,
   .main-nav {
-    margin-top: 5px;
+    display: flex;
   }
-  .logo a,
-  .main-nav a {
-    padding: 10px 15px;
-    text-align: center;
-    display: block;
-    color: white;
-    font-size: 0.5em;
-  }
-  
-  .main-nav a {
-    color: white;
-    font-size: 0.5em;
-  }
-  
-  .main-nav a:hover {
-    color: #718daa;
-  }
-  
   .header {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    background-color: #f4f4f4;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  /* ================================= 
-    Media Queries
-  ==================================== */
-  
-  @media (min-width: 769px) {
-    .header,
-    .main-nav {
-      display: flex;
-    }
-    .header {
-      flex-direction: column;
-      align-items: center;
-    }
+}
+
+@media (min-width: 1025px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
   }
-  
-  @media (min-width: 1025px) {
-    .header {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
+}
