@@ -21,7 +21,7 @@ let antiSex = L.featureGroup();
 // define layers
 let layers = {
   "Anti Race": antiRace,
-  "Anti Gender": antiReligion,
+  "Anti Gender": antiGender,
 };
 
 // initialize
@@ -113,7 +113,7 @@ function plotMap() {
   // loop through data
   console.log(racefilter.length);
 
-  console.log(racefilter[0]);
+  console.log(racefilter);
   racefilter.forEach(function (item) {
     // create marker
     let circleOptions = {
@@ -135,6 +135,7 @@ function plotMap() {
 
   // after loop, add the FeatureGroup to map
   antiRace.addTo(map);
+  
   // fit map to markers
 	map.fitBounds(antiRace.getBounds())
 }
