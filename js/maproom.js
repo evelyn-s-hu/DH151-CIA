@@ -1,5 +1,187 @@
 // Global variables
 let map;
+let lat = 37;
+let lon = -95;
+let zl = 3;
+let path = "data/bias.csv";
+// let markers = L.featureGroup();
+let csvdata;
+let lastdate;
+let alldata = [];
+let race = []; //go thru less data this way each time
+let racefilter = []; //each city has a total count of the cases, count for each anti race
+let genderfilter = [];
+
+//FeatureGroup for each layer
+let antiRace = L.featureGroup();
+let antiGender = L.featureGroup();
+let antiAble = L.featureGroup();
+let antiReligion = L.featureGroup();
+let antiSex = L.featureGroup();
+
+// define layers
+let layers = {
+  "Anti Race": antiRace,
+  "Anti Gender": antiGender,
+};
+
+// initialize
+$(document).ready(function () {
+  createMap(lat, lon, zl);
+  readCSV();
+});
+
+// create the map
+function createMap(lat, lon, zl) {
+  map = L.map("map").setView([lat, lon], zl);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  L.control.layers(null, layers).addTo(map);
+}
+
+
+// function to read csv data
+function readCSV() {
+  console.log("readCSV")
+  Papa.parse(path, {
+    header: true,
+    download: true,
+    complete: function (data) {
+      // console.log(data);
+      // put the data in a global variable
+      csvdata = data;
+
+      csvdata.data.forEach(function (item, index) {
+        if (item.lat != undefined) {
+          alldata.push(item);
+        }
+      });
+      //get list of unique city names
+      //   const unique = [...new Set(alldata.map((item) => item.city))];
+      let unique = [
+        ...new Map(alldata.map((item) => [item.city, item])).values(),
+      ];
+      // console.log(unique);
+
+      //initialize the values
+      unique.forEach(function (item, index) {
+        let obj = {};
+        obj["city"] = item.city;
+        obj["racetotal"] = 0;
+        obj["black"] = 0;
+        obj["amind"] = 0;
+        obj["asian"] = 0;
+        obj["mult"] = 0;
+        obj["hisp"] = 0;
+        obj["gendertotal"] = 0;
+        obj["female"] = 0;
+        obj["male"] = 0;
+        obj["nonconform"] = 0;
+        obj["lat"] = parseFloat(item.lat);
+        obj["long"] = parseFloat(item.lng);
+        racefilter.push(obj); //add it
+        genderfilter.push(obj);
+      });
+
+      csvdata.data.forEach(function (item, index) {
+        //find index of the city in racefilter
+        const number = racefilter.findIndex((x) => x.city === item.city);
+
+        if (item["BIAS_DESC_1"] == "Anti-Black or African American") {
+          racefilter[number].black++; //add 1 to the total number of anti black cases
+          racefilter[number].racetotal++;
+        } else if (
+          item["BIAS_DESC_1"] == "Anti-American Indian or Alaska Native"
+        ) {
+          racefilter[number].amind++; //add 1 to the total number of anti american indian cases
+          racefilter[number].racetotal++;
+        } else if (item["BIAS_DESC_1"] == "Anti Asian") {
+          racefilter[number].asian++; //add 1 to the total number of anti asian cases
+          racefilter[number].racetotal++;
+        } else if (item["BIAS_DESC_1"] == "Anti-Multiple Races, Group") {
+          racefilter[number].mult++; //add 1 to the total number of anti mult races cases
+          racefilter[number].racetotal++;
+        } else if (item["BIAS_DESC_1"] == "Anti-Hispanic or Latino") {
+          racefilter[number].hisp++;
+          racefilter[number].racetotal++;
+        
+        } else if (item["BIAS_DESC_1"] == "Anti-Female") {
+          genderfilter[number].female++; //add 1 to the total number of anti female cases
+          genderfilter[number].gendertotal++;
+        } else if (item["BIAS_DESC_1"] == "Anti-Male") {
+          genderfilter[number].male++; //add 1 to the total number of anti male cases
+          genderfilter[number].gendertotal++;
+        } else if (item["BIAS_DESC_1"] == "Anti-Gender Non-Conforming") {
+          genderfilter[number].nonconform++; //add 1 to the total number of anti-Gender Non-Conforming cases
+          genderfilter[number].gendertotal++;
+        }
+      });
+      plotMap();
+    },
+  });
+}
+
+function plotMap() {
+  // loop through data
+  console.log(racefilter.length);
+  console.log(racefilter);
+
+  // racefilter
+  racefilter.forEach(function (item) {
+    // create marker
+    let circleOptions = {
+      radius: item.racetotal/50,
+      weight: 1,
+      color: 'white',
+      fillColor: 'red',
+      fillOpacity: 0.5
+    }
+    let marker = L.circleMarker([item.lat, item.long], circleOptions)
+      .bindPopup(
+        `<h3>${item.city}</h3><p><strong>Anti Asian: </strong>${item.asian}</p><p><strong>Anti-Black or African American: </strong>${item.black}</p><p><strong>Anti-American Indian or Alaska Native: </strong>${item.amind}</p><p><strong>Anti-Multiple Races, Group: </strong>${item.mult}</p><p><strong>Anti-Hispanic or Latino: </strong>${item.hisp}</p>`
+      )
+      .openPopup();
+    // add marker to featuregroup
+    antiRace.addLayer(marker);
+  });
+
+
+  // gender filter
+  genderfilter.forEach(function (item) {
+    // create marker
+    let circleOptions = {
+      radius: item.gendertotal/50,
+      weight: 1,
+      color: 'white',
+      fillColor: 'green',
+      fillOpacity: 0.5
+    }
+    let marker = L.circleMarker([item.lat, item.long], circleOptions)
+      .bindPopup(
+        `<h3>${item.city}</h3><p><strong>Anti-Female: </strong>${item.female}</p><p><strong>Anti-Male: </strong>${item.male}</p><p><strong>Anti-Gender Non-Conforming: </strong>${item.nonconform}</p>`
+      )
+      .openPopup();
+    // add marker to featuregroup
+    antiGender.addLayer(marker);
+  });
+
+  // after loop, add the FeatureGroup to map
+  antiRace.addTo(map);
+  antiGender.addTo(map);
+  
+  // fit map to markers
+	map.fitBounds(antiRace.getBounds())
+  map.fitBounds(antiGender.getBounds())
+}
+
+/* Code if we use the new dataset: fulldataset_apr29.csv (FOR FINAL)
+
+// Global variables
+let map;
 let lat = 0;
 let lon = 0;
 let zl = 1;
@@ -77,151 +259,5 @@ function mapCSV(data){
 
 	// fit markers to map
 	map.fitBounds(markers.getBounds())
-}
-
-
-// 
-
-/* OLD CODE, before Apr 29
-// Global variables
-let map;
-let lat = 37;
-let lon = -95;
-let zl = 3;
-let path = "data/bias.csv";
-// let markers = L.featureGroup();
-let csvdata;
-let lastdate;
-let alldata = [];
-let race = []; //go thru less data this way each time
-let racefilter = []; //each city has a total count of the cases, count for each anti race
-
-//FeatureGroup for each layer
-let antiRace = L.featureGroup();
-let antiGender = L.featureGroup();
-let antiAble = L.featureGroup();
-let antiReligion = L.featureGroup();
-let antiSex = L.featureGroup();
-
-// define layers
-let layers = {
-  "Anti Race": antiRace,
-  "Anti Gender": antiGender,
-};
-
-// initialize
-$(document).ready(function () {
-  createMap(lat, lon, zl);
-  readCSV();
-});
-
-// create the map
-function createMap(lat, lon, zl) {
-  map = L.map("map").setView([lat, lon], zl);
-
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  }).addTo(map);
-
-  L.control.layers(null, layers).addTo(map);
-}
-
-
-// function to read csv data
-function readCSV() {
-  console.log("readCSV")
-  Papa.parse(path, {
-    header: true,
-    download: true,
-    complete: function (data) {
-      // console.log(data);
-      // put the data in a global variable
-      csvdata = data;
-
-      csvdata.data.forEach(function (item, index) {
-        if (item.lat != undefined) {
-          alldata.push(item);
-        }
-      });
-      //get list of unique city names
-      //   const unique = [...new Set(alldata.map((item) => item.city))];
-      let unique = [
-        ...new Map(alldata.map((item) => [item.city, item])).values(),
-      ];
-      // console.log(unique);
-
-      //initialize the values
-      unique.forEach(function (item, index) {
-        let obj = {};
-        obj["city"] = item.city;
-        obj["total"] = 0;
-        obj["black"] = 0;
-        obj["amind"] = 0;
-        obj["asian"] = 0;
-        obj["mult"] = 0;
-        obj["hisp"] = 0;
-        obj["lat"] = parseFloat(item.lat);
-        obj["long"] = parseFloat(item.lng);
-        racefilter.push(obj); //add it
-      });
-
-      csvdata.data.forEach(function (item, index) {
-        //find index of the city in racefilter
-        const number = racefilter.findIndex((x) => x.city === item.city);
-
-        if (item["BIAS_DESC_1"] == "Anti-Black or African American") {
-          racefilter[number].black++; //add 1 to the total number of anti black cases
-          racefilter[number].total++;
-        } else if (
-          item["BIAS_DESC_1"] == "Anti-American Indian or Alaska Native"
-        ) {
-          racefilter[number].amind++; //add 1 to the total number of anti american indian cases
-          racefilter[number].total++;
-        } else if (item["BIAS_DESC_1"] == "Anti Asian") {
-          racefilter[number].asian++; //add 1 to the total number of anti asian cases
-          racefilter[number].total++;
-        } else if (item["BIAS_DESC_1"] == "Anti-Multiple Races, Group") {
-          racefilter[number].mult++; //add 1 to the total number of anti mult races cases
-          racefilter[number].total++;
-        } else if (item["BIAS_DESC_1"] == "Anti-Hispanic or Latino") {
-          racefilter[number].hisp++;
-          racefilter[number].total++;
-        }
-      });
-      plotMap();
-    },
-  });
-}
-
-function plotMap() {
-  // loop through data
-  console.log(racefilter.length);
-
-  console.log(racefilter);
-  racefilter.forEach(function (item) {
-    // create marker
-    let circleOptions = {
-      radius: item.total/50,
-      weight: 1,
-      color: 'white',
-      fillColor: 'red',
-      fillOpacity: 0.5
-    }
-
-    let marker = L.circleMarker([item.lat, item.long], circleOptions)
-      .bindPopup(
-        `<h3>${item.city}</h3><p><strong>Anti Asian: </strong>${item.asian}</p><p><strong>Anti-Black or African American: </strong>${item.black}</p><p><strong>Anti-American Indian or Alaska Native: </strong>${item.amind}</p><p><strong>Anti-Multiple Races, Group: </strong>${item.mult}</p><p><strong>Anti-Hispanic or Latino: </strong>${item.hisp}</p>`
-      )
-      .openPopup();
-    // add marker to featuregroup
-    antiRace.addLayer(marker);
-  });
-
-  // after loop, add the FeatureGroup to map
-  antiRace.addTo(map);
-  
-  // fit map to markers
-	map.fitBounds(antiRace.getBounds())
 }
 */
