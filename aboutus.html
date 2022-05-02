@@ -25,7 +25,7 @@
 	  <div class = "bio_container">
 		<img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/KeonaMae.png?raw=true" width="175">
 		<p>
-			<b>Keona Mae Pablo</b>: Project Manager <br>
+			<b>Keona Mae Pablo</b> - Project Manager <br>
 			Keona Mae is a 4th year Cognitive Science major with a specialization in computing and minor in Digital Humanities. 
 			As an Asian American woman, the rise of Asian American hate crimes through the pandemic shocked her. 
 			Through this project she hopes to bring to light many of the struggles minorities face across the country and investigate ways we can create an inclusive environment for all people.  
@@ -34,7 +34,7 @@
 	<div class = "bio_container">
 		<img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/AudreyTey.jpg?raw=true" width="175">
 		<p>
-			<b>Audrey Tey</b>: Data Specialist <br>
+			<b>Audrey Tey</b> - Data Specialist <br>
 			Audrey is a third-year Sociology and Statistics student, minoring in Digital Humanities. 
 			Through the project, she would like to find out more about the trends and statistics surrounding anti-Asian hate incidents, and investigate if anything can be done to alleviate such discrimination.  
 		</p>
@@ -43,21 +43,45 @@
 	<div class = "bio_container">
 		<img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/EvelynHu.jpg?raw=true" width="175">
 		<p>
-			<b>Evelyn Hu</b>: Content Developer <br>
+			<b>Evelyn Hu</b> - Content Developer <br>
 			Evelyn is a fourth year Cognitive Science major specializing in Computing. 
 			After taking a course about the Asian American Movement last quarter, and as an Asian American herself, she was inspired to conduct further research into the struggles faced by Asian Americans during a time of heightened hate during the pandemic.  
 		</p>
 	</div>
 
 	<div class = "bio_container">
-		<img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/LauraLu.jpg?raw=true" width="175" height="175">
+		<img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/LauraLu.jpg?raw=true" width="175">
 		<p>
-			<b>Laura Lu</b>: Webmaster <br>
+			<b>Laura Lu</b> - Webmaster <br>
 			Laura is a second year Computer Science major. 
 			Being an Asian American herself, this topic hits close to home. With the rise of Asian American hate crimes committed during this last year as a result of the pandemic, she is especially interested in bringing more awareness to both the struggles the AAPI community is facing and their strength in light of it all.
 		</p>
 	</div>
 	
-		<h2 class="header-text">About the Dataset</h2>
+		<h1 class="header-text">About the Project</h1>
+		<div class = "content">
+		<p>
+			According to the FBI annual hate crime statistics report, hate crime reports are at an all time high in the last 12 years. 
+			Hate crimes targeting Black people have almost doubled since 2008, while Asian hate crimes have been on the rise during the COVID-19 pandemic. 
+			This project aims to spread more awareness regarding hate crime trends in the US and advocate for equitable treatment and support for all individuals - regardless of their race, religion and sexual orietnation.
+			<br>
+			While we understand that there may be gaps in the data and that many hate crimes are underreported, our project is focused on diving deeper into existing data. 
+			Specifically, we want to show that there is an unequal spread of hate crime motivations and find the correlation between the intensity of the hate crimes committed and the motivation. 
+			We also wanted to investigate whether specific motivations perpetuated the existence of hate groups.
+		</p>
+		</div>
+
+		<h2 class="header-text">About the Datasets</h2>
+		<div class = "content">
+			<p>
+				Our project uses two primary datasets: the <a href="https://www.kaggle.com/datasets/louissebye/united-states-hate-crimes-19912017">United States Hate Crimes (1991-2018) dataset</a> from Kaggle, and the <a href="https://simplemaps.com/data/us-cities">US Cities Database</a> found on SimpleMaps.
+				<br>
+				The first dataset consists of all hate crimes committed between 1991 and 2018, as reported by authorities at the state, city, county levels, and other entities such as college campuses and tribal officials.
+				The data has been filtered in two ways: we have (1) extracted entries of hate crime that occured between the years of 2010-2018, and (2) filtered those entries to hate crimes reported at the city-level only.
+				The data has also been cleaned and unwanted variables have been removed, leaving the following: year of hate crime, state, city, offender’s race, bias/motivations (e.g. anti-Asian), and the severity or type of offense (e.g. aggravated assault).
+				<br>
+				The second dataset contains the coordinates and populations of all the cities in America. An inner join was performed to combine the first dataset with the coordinates (latitude and longitude) of each city variables from the second dataset. 
+			</p>
+			</div>
 </body>
 </html>
