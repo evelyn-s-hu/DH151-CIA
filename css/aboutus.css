@@ -72,6 +72,17 @@ a {
   padding: 20px;
 }
 
+.info{
+  margin-left:10px;
+}
+
+.header-text{
+  margin-left:20px;
+  padding-top:30px;
+  font-size:30px;
+}
+
+
 /* ================================= 
   Media Queries
 ==================================== */
