@@ -3,25 +3,11 @@
 Our team is the Crime Investigation Agency (CIA). Looking at data from law enforcement agencies across the United States, we would like to delve deeper into hate crimes and incidents from 2010 to 2018, and study the spatial distribution of crimes as well as the relationships between variables such as the target groups (e.g. Anti-Asian) and the severity of such crimes.
 
 ## Members
-**Keona Mae Pablo**  
-<img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/KeonaMae.png?raw=true" width="350">  
-Role: Project Manager  
-Keona Mae is a 4th year Cognitive Science major with a specialization in computing and minor in Digital Humanities. As an Asian American woman, the rise of Asian American hate crimes through the pandemic shocked her. Through this project she hopes to bring to light many of the struggles minorities face across the country and investigate ways we can create an inclusive environment for all people.  
-  
-**Audrey Tey**  
-<img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/AudreyTey.jpg?raw=true" width="350">  
-Role: Data Specialist  
-Audrey is a third-year Sociology and Statistics student, minoring in Digital Humanities. Through the project, she would like to find out more about the spatial distribution of hate crime in America, and investigate if there are any trends or explanations for such discrimination and persecution.  
-  
-**Evelyn Hu**  
-<img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/EvelynHu.jpg?raw=true" width="350">  
-Role: Content Developer  
-Evelyn is a fourth year Cognitive Science major specializing in Computing. After taking a course about the Asian American Movement last quarter, and as an Asian American herself, she was inspired to conduct further research into the struggles faced by Asian Americans during a time of heightened hate during the pandemic.  
-  
-**Laura Lu**  
-<img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/LauraLu.jpg?raw=true" width="350">  
-Role: Webmaster  
-Laura is a second year Computer Science major. Being an Asian American herself, this topic hits close to home. With the rise of Asian American hate crimes committed during this last year as a result of the pandemic, she is especially interested in bringing more awareness to both the struggles the AAPI community is facing and their strength in light of it all.  
+| Keona Mae Pablo | Audrey Tey | Evelyn Hu | Laura Lu |
+| --- | --- | --- | --- |
+| <img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/KeonaMae.png?raw=true" width="350"> | <img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/AudreyTey.jpg?raw=true" width="350"> | <img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/EvelynHu.jpg?raw=true" width="350"> | <img src="https://github.com/evelyn-s-hu/DH151-CIA/blob/main/images/LauraLu.jpg?raw=true" width="350"> |
+| Project Manager | Data Specialist | Content Developer | Webmaster |
+| Keona Mae is a 4th year Cognitive Science major with a specialization in computing and minor in Digital Humanities. As an Asian American woman, the rise of Asian American hate crimes through the pandemic shocked her. Through this project she hopes to bring to light many of the struggles minorities face across the country and investigate ways we can create an inclusive environment for all people. | Audrey is a third-year Sociology and Statistics student, minoring in Digital Humanities. Through the project, she would like to find out more about the spatial distribution of hate crime in America, and investigate if there are any trends or explanations for such discrimination and persecution. | Evelyn is a fourth year Cognitive Science major specializing in Computing. After taking a course about the Asian American Movement last quarter, and as an Asian American herself, she was inspired to conduct further research into the struggles faced by Asian Americans during a time of heightened hate during the pandemic. | Laura is a second year Computer Science major. Being an Asian American herself, this topic hits close to home. With the rise of Asian American hate crimes committed during this last year as a result of the pandemic, she is especially interested in bringing more awareness to both the struggles the AAPI community is facing and their strength in light of it all. | 
 
 ## Overview
 According to the FBI annual hate crime statistics report, hate crime reports are at an all time high in the last 12 years. Hate crimes targeting Black people have almost doubled since 2008 while Asian hate crimes have been on the rise during the COVID-19 pandemic. We, investigators in the CIA, are fighting for greater awareness regarding hate crime in the US and for equitable treatment and support for all individuals - regardless of their race, religion and sexual orietnation. Hate crimes alone have the power to overwhelm the lives of its victims. But there are rippling psychological and emotional effects into the communities that these hate crimes are targeting. While we understand that many hate crimes are underreported, our project is focused on diving deeper into existing data. Specifically, we want to show that there is an unequal spread of hate crime motivations and investigate potential correlations between the target group, volume and severity of the hate crimes committed.
