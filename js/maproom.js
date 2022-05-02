@@ -43,6 +43,10 @@ function createMap(lat, lon, zl) {
   L.control.layers(null, layers).addTo(map);
 }
 
+function flyToIndex(lat,lon){
+	map.flyTo([lat,lon],8)
+    console.log("clicked!")
+};
 
 // function to read csv data
 function readCSV() {
