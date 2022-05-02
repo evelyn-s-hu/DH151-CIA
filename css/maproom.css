@@ -2,7 +2,7 @@
     box-sizing: border-box;
   }
   body {
-    font-family: "Montserrat", sans-serif;
+    font-family: Tahoma, sans-serif;font-size: 17px;
     line-height: 1.6;
     margin: 0;
     min-height: 100vh;
@@ -120,15 +120,20 @@ body {
 	grid-area: content;
 }
 
-.sidebar-item {	/* border: 1px solid gray; */
-	padding: 2px;	/* background-color: #333; */
-	float:left;
-	cursor:pointer;
-	color: rgb(255, 79, 79);
-	font-size: 1em;
-  margin:10px;
-
+.sidebar-item{
+	padding: 10px;
+	background: #ec3c3c;
+	color: white;
+	margin: 5px;
+	cursor: pointer;
+	width:fit-content;
+	float: left;
 }
 .sidebar-item:hover {
 	background-color: grey;
+}
+
+
+.data {
+  color: white;
 }

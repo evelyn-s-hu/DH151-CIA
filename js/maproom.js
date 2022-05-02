@@ -2,7 +2,7 @@
 let map;
 let lat = 37;
 let lon = -95;
-let zl = 3;
+let zl = 5;
 let path = "data/bias.csv";
 // let markers = L.featureGroup();
 let csvdata;
@@ -35,10 +35,9 @@ $(document).ready(function () {
 function createMap(lat, lon, zl) {
   map = L.map("map").setView([lat, lon], zl);
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  }).addTo(map);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+	}).addTo(map); // CartoDB.Voyager base map layer
 
   L.control.layers(null, layers).addTo(map);
 }
@@ -158,11 +157,13 @@ function plotMap() {
   genderfilter.forEach(function (item) {
     // create marker
     let circleOptions = {
-      radius: item.gendertotal/50,
+      radius: item.gendertotal/3,
       weight: 1,
       color: 'white',
       fillColor: 'green',
       fillOpacity: 0.5
+
+      
     }
     let marker = L.circleMarker([item.lat, item.long], circleOptions)
       .bindPopup(
