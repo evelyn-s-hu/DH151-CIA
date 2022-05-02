@@ -56,7 +56,8 @@ a {
 
 .bio_container{
   display: flex;
-  padding-top:40px;
+  padding-top:30px;
+  padding-left: 20px;
 }
 
 .bio_container img{
@@ -64,6 +65,10 @@ a {
 }
 
 .bio_container p{
+  padding: 20px;
+}
+
+.content p{
   padding: 20px;
 }
 
