@@ -56,14 +56,13 @@
   .header {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    background-color: #f4f4f4;
-    border-radius: 5px;
+    background-color: white;
   }
 
   .header-text {
-    text-align: center;
+    text-align: center;    
   }
-
+  
   .general-text {
     display:block;
     margin-left: 10%;
