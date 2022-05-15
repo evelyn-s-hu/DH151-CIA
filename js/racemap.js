@@ -35,10 +35,12 @@ function createMap(lat,lon,zl){
 function getGeoJSON(){
 
 	$.getJSON(geojsonPath,function(data){ // geojsonPath is the path to the geojson file
-		console.log(data)
+		// console.log(data)
 
 		// put the data in a global variable
 		geojson_data = data;
+
+		// console.log (geojson_data)
 
 		// call the map function
 		mapGeoJSON('Asian') // add the field to be used!!!!
@@ -90,7 +92,7 @@ function getStyle(feature){
 		color: 'white',
 		weight: 1,
 		fill: true,
-		fillColor: brew.getColorInRange(feature.properties[fieldtomap]),
+		fillColor: brew.getColorInRange(Number(feature.properties[fieldtomap])),
 		fillOpacity: 0.8
 	}
 }
@@ -108,8 +110,8 @@ function createLegend(){
 			to = breaks[i + 1];
 			if(to) {
 				labels.push(
-					'<i style="background:' + brew.getColorInRange(from) + '"></i> ' +
-					from.toFixed(2) + ' &ndash; ' + to.toFixed(2));
+					'<i style="background:' + brew.getColorInRange(Number(from)) + '"></i> ' +
+					Number(from).toFixed(2) + ' &ndash; ' + Number(to).toFixed(2));
 				}
 			}
 			
@@ -171,7 +173,7 @@ function createInfoPanel(){
 	info_panel.update = function (properties) {
 		// if feature is highlighted
 		if(properties){
-			this._div.innerHTML = `<b>${properties.name}</b><br>${fieldtomap}: ${properties[fieldtomap]}`;
+			this._div.innerHTML = `<b>${properties.State}</b><br>${fieldtomap}: ${properties[fieldtomap]}`;
 		}
 		// if feature is not highlighted
 		else
