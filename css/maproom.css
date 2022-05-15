@@ -2,7 +2,7 @@
     box-sizing: border-box;
   }
   body {
-    font-family: "Montserrat", sans-serif;
+    font-family: Tahoma, sans-serif;font-size: 17px;
     line-height: 1.6;
     margin: 0;
     min-height: 100vh;
@@ -52,8 +52,15 @@
   .header {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    background-color: #f4f4f4;
+    background-color: white;
   }
+/* .header {
+    grid-area: header;
+    padding:10px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: 2.3em;
+  } */
   
   /* ================================= 
     Media Queries
@@ -101,34 +108,41 @@ body {
 }
 
 .header {
-	grid-area: header;
+  grid-area: header;
+	padding:10px;
 	background-color: #333;
 	color: white;
-	font-size: 2em;
+	font-size: 2.3em;
 }
 
 .sidebar {
   grid-area: sidebar;
   display:inline-block;
-	color: white;
+	color: black;
 	padding:10px;
-	background-color: rgb(60, 60, 60);
-  width: 100%;
+	background-color: rgb(255, 255, 255);
+  width: fit-content;
+  float: none;
 }
 
 .content {
 	grid-area: content;
 }
 
-.sidebar-item {	/* border: 1px solid gray; */
-	padding: 2px;	/* background-color: #333; */
-	float:left;
-	cursor:pointer;
-	color: rgb(255, 79, 79);
-	font-size: 1em;
-  margin:10px;
-
+.sidebar-item{
+	padding: 10px;
+	background: #ec3c3c;
+	color: white;
+	margin: 5px;
+	cursor: pointer;
+	width:fit-content;
+	float: left;
 }
 .sidebar-item:hover {
 	background-color: grey;
+}
+
+
+.data {
+  color: white;
 }
