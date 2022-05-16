@@ -2,7 +2,7 @@
 let map;
 let lat = 0;
 let lon = 0;
-let zl = 3;
+let zl = 10;
 let path = '';
 // put this in your global variables
 let geojsonPath = 'data/race2010bystates_may11.geojson';
@@ -40,10 +40,11 @@ function getGeoJSON(){
 		// put the data in a global variable
 		geojson_data = data;
 
+        console.log(geojson_data)
 		// console.log (geojson_data)
 
 		// call the map function
-		mapGeoJSON('Asian') // add the field to be used!!!!
+		mapGeoJSON('Black_or_African_American') // add the field to be used!!!!
 	})
 }
 
