@@ -9,6 +9,8 @@ body,html {
 }
 
 body {
+	font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
 	display: grid;
 	grid-template-rows: 60px 1fr 40px;
 	grid-template-columns: 300px 1fr;
