@@ -43,7 +43,7 @@ function getGeoJSON(){
 		// console.log (geojson_data)
 
 		// call the map function
-		mapGeoJSON('state_total'); // add the field to be used!!!!
+		mapGeoJSON('total_cases'); // add the field to be used!!!!
 	})
 }
 
