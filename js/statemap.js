@@ -1,8 +1,8 @@
 // Global variables
 let map;
-let lat = 0;
-let lon = 0;
-let zl = 3;
+let lat = 37;
+let lon = -95;
+let zl = 5;
 let path = '';
 // put this in your global variables
 let geojsonPath = 'data/statemapdata_may21.geojson';
@@ -26,8 +26,8 @@ $( document ).ready(function() {
 function createMap(lat,lon,zl){
 	map = L.map('map').setView([lat,lon], zl);
 
-	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18,
 	}).addTo(map);
 }
 
@@ -35,7 +35,7 @@ function createMap(lat,lon,zl){
 function getGeoJSON(){
 
 	$.getJSON(geojsonPath,function(data){ // geojsonPath is the path to the geojson file
-		console.log(data)
+		// console.log(data)
 
 		// put the data in a global variable
 		geojson_data = data;
