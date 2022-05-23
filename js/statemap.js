@@ -1,8 +1,8 @@
 // Global variables
 let map;
-let lat = 37;
-let lon = -95;
-let zl = 5;
+let lat = 43;
+let lon = -100;
+let zl = 3;
 let path = '';
 // put this in your global variables
 let geojsonPath = 'data/statemapdata_may21.geojson';
@@ -27,7 +27,7 @@ function createMap(lat,lon,zl){
 	map = L.map('map').setView([lat,lon], zl);
 
 	L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18,
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(map);
 }
 
@@ -68,7 +68,7 @@ function mapGeoJSON(field,num_classes,color,scheme){
 	// set up the "brew" options
 	brew.setSeries(values);
 	brew.setNumClasses(9); // between 3 - 9 (or maybe depends on the variable)
-	brew.setColorCode('RdYlGn'); // brew color options 
+	brew.setColorCode('OrRd'); // brew color options 
 	brew.classify('jenks'); // brew classification method 
 
 	// create the layer and add to map
@@ -76,8 +76,6 @@ function mapGeoJSON(field,num_classes,color,scheme){
 		style: getStyle, //call a function to style each feature
         onEachFeature: onEachFeature // add this arg to implement actions on each feature
 	}).addTo(map);
-
-	map.fitBounds(geojson_layer.getBounds())
 
     // create the legend
 	createLegend();
@@ -95,19 +93,6 @@ function getStyle(feature){
 		fillColor: brew.getColorInRange(Number(feature.properties[fieldtomap])),
 		fillOpacity: 0.8
 	}
-}
-
-// return the color for each feature
-function getColor(d) {
-
-	return d > 1000000000 ? '#800026' :
-		   d > 500000000  ? '#BD0026' :
-		   d > 200000000  ? '#E31A1C' :
-		   d > 100000000  ? '#FC4E2A' :
-		   d > 50000000   ? '#FD8D3C' :
-		   d > 20000000   ? '#FEB24C' :
-		   d > 10000000   ? '#FED976' :
-					  '#FFEDA0';
 }
 
 // LEGEND
@@ -186,12 +171,12 @@ function createInfoPanel(){
 	info_panel.update = function (properties) {
 		// if feature is highlighted
 		if(properties){
-			this._div.innerHTML = `<b>${properties.State}</b><br>${fieldtomap}: ${properties[fieldtomap]}`;
+			this._div.innerHTML = `<b>${properties.NAME}</b><br>${'Total Number of Crimes'}: ${properties[fieldtomap]}`;
 		}
 		// if feature is not highlighted
 		else
 		{
-			this._div.innerHTML = 'Hover over a state';
+			this._div.innerHTML = 'Hover over a state to get information on the total crimes committed.';
 		}
 	};
 
