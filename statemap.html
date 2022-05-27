@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>World Choropleth</title>
+	<title>Hate Crime Density Map</title>
 	<meta charset="utf-8" />
 
 	<!-- style sheets -->
-	<link rel="stylesheet" href="css/racemap.css">
+	<link rel="stylesheet" href="css/statemap.css">
 
 	<!-- leaflet -->
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -17,20 +17,33 @@
     <!-- classy brew -->
 	<script src="js/classybrew.js"></script>
 
+	<!-- apex charts -->
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
 </head>
 <body>
 
-	<div class="header">
-            Hate Crime Density Map
+	<header class="header">
+		<h1 class="logo"><a href="#">Crime Investigation Agency</a></h1>
+		  <ul class="main-nav">
+			<li><a href="home.html">Home</a></li>
+			<li><a href="aboutus.html">About Us</a></li>
+			<li><a href="maproom.html">Breakdown of Hate Crimes</a></li>
+			<li><a href="statemap.html">Bird's Eye View</a></li>
+			<li><a href="data.html">Data Critique</a></li>
+		  </ul>
+	  </header> 
+
+	<div class="topbar">
+		This choropleth map shows the density of all hate crimes by state from 2010 to 2018. <br>
+		It serves as a bird’s eye view of the issue in contrast to the other map, which shows the breakdown of the hate crimes by type and year. 
 	</div>
-	<div class="sidebar">
-		This choropleth map shows the density of all hate crimes by state from 2010 to 2018. It serves as a bird’s eye view of the issue in contrast to the other map, which shows the breakdown of the hate crimes by type and year. 
-	</div>
+
 	<div class="content">
 		<div id="map"></div>
 	</div>
-	<div class="footer">
-	</div>
+
+	<div class="dashboard"></div>
 
 	<script src="js/statemap.js"></script>
 

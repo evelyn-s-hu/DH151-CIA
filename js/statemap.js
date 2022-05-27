@@ -1,8 +1,8 @@
 // Global variables
 let map;
-let lat = 43;
+let lat = 35;
 let lon = -100;
-let zl = 3;
+let zl = 4;
 let path = '';
 // put this in your global variables
 let geojsonPath = 'data/statemapdata_may21.geojson';
@@ -109,7 +109,7 @@ function createLegend(){
 			if(to) {
 				labels.push(
 					'<i style="background:' + brew.getColorInRange(Number(from)) + '"></i> ' +
-					Number(from).toFixed(2) + ' &ndash; ' + Number(to).toFixed(2));
+					Number(from).toFixed(0) + ' &ndash; ' + Number(to).toFixed(0));
 				}
 			}
 			
@@ -145,6 +145,8 @@ function highlightFeature(e) {
 	}
 
     info_panel.update(layer.feature.properties); // add info panel when a user hovers over a feature
+
+	createDashboard(layer.feature.properties)
 }
 
 // on mouse out, reset the style, otherwise, it will remain highlighted
@@ -158,7 +160,7 @@ function zoomToFeature(e) {
 	map.fitBounds(e.target.getBounds());
 }
 
-// INFO PANEL
+// INFO PANEL (top right, when hovering over state)
 function createInfoPanel(){
 
 	info_panel.onAdd = function (map) {
@@ -169,6 +171,9 @@ function createInfoPanel(){
 
 	// method that we will use to update the control based on feature properties passed
 	info_panel.update = function (properties) {
+		this._div.innerHTML = 'Hover over a state to get information on the total crimes committed.';
+		
+		/* since we have the chart, do without the hover-action showing the total number of cases. code for that: 
 		// if feature is highlighted
 		if(properties){
 			this._div.innerHTML = `<b>${properties.NAME}</b><br>${'Total Number of Crimes'}: ${properties[fieldtomap]}`;
@@ -178,7 +183,97 @@ function createInfoPanel(){
 		{
 			this._div.innerHTML = 'Hover over a state to get information on the total crimes committed.';
 		}
+		*/
 	};
 
 	info_panel.addTo(map);
+}
+
+function createDashboard(properties){
+	console.log(properties)
+}
+
+// CHART
+// createDashboard function
+function createDashboard(properties){
+
+	// clear dashboard
+	$('.dashboard').empty();
+
+	console.log(properties)
+
+	// chart title: can put variable name !!!
+	let title = `${properties.NAME} (${properties.total_cases} hate crimes)`; // city name variable in dataset
+
+	// data values: insert values OR variable names here !!!
+	// let data = [27,17,17,20]; 
+    let data = [properties['anti_race_total'], properties['anti_religion_total'], properties['anti_gender_total'], properties['anti_sexual_orientation_total'], properties['anti_ableism_total']]
+
+	// data fields: labels for the pie chart !!!
+	let fields = ['Anti-race','Anti-religion','Anti-gender', 'Anti-sexual orientation', 'Anti-ableism'];
+
+	// set chart options: see documentation here (https://apexcharts.com/)
+
+	// for a bar chart:
+	let options = {
+		chart: {
+			type: 'bar',
+			height: 300,
+			animations: {
+				enabled: false,
+			},
+			fontFamily: 'Poppins'
+		},
+		title: {
+			text: title,
+			style: {
+				fontSize: '30px'
+			}
+		},
+		
+		plotOptions: {
+			bar: {
+				horizontal: true
+			}
+		},
+		series: [
+			{
+				data: data
+			}
+		],
+		xaxis: {
+			categories: fields
+		},
+		fill: {
+			colors: ['#F84F4F']
+		}
+
+    
+    /* for a pie chart:
+    let options = {
+	    chart: {
+		    type: 'pie',
+		    height: 600, // size of pie chart
+		    width: 600,	// size of pie chart
+		    animations: {
+			    enabled: false,
+		    }
+	    },
+	    title: {
+		    text: title,
+	    },
+	    series: data,
+	    labels: fields,
+	    legend: {
+	    position: 'right',
+		    offsetY: 0,
+		    height: 230,
+	    }
+    */
+   
+	};
+	
+	// create the chart
+	let chart = new ApexCharts(document.querySelector('.dashboard'), options)
+	chart.render()
 }
