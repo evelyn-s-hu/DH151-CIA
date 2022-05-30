@@ -1,125 +1,151 @@
 * {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: Tahoma, sans-serif;font-size: 17px;
-    line-height: 1.6;
-    margin: 0;
-    min-height: 100vh;
-  }
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  h2,
-  h3,
-  a {
-    color: #34495e;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  .logo {
-    margin: 0;
-    font-size: 1.45em;
-  }
-  
-  .main-nav {
-    margin-top: 5px;
-  }
-  .logo a,
-  .main-nav a {
-    padding: 10px 15px;
-    text-align: center;
-    display: block;
-    color: white;
-    font-size: 0.5em;
-  }
-  
-  .main-nav a {
-    color: white;
-    font-size: 0.5em;
-  }
-  
-  .main-nav a:hover {
-    color: #718daa;
-  }
-  
-  .header {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    background-color: white;
-  }
-/* .header {
-    grid-area: header;
-    padding:10px;
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    font-size: 2.3em;
-  } */
-  
-  /* ================================= 
-    Media Queries
-  ==================================== */
-  
-  @media (min-width: 769px) {
-    .header,
-    .main-nav {
-      display: flex;
-    }
-    .header {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  
-  @media (min-width: 1025px) {
-    .header {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-  
-
-  body,html {
-	margin:0;
-	height:100%;
-	width:100%;
+  box-sizing: border-box;
 }
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap'); */
+
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLFj_Z1xlFd2JQEk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+  /* background-image: url("../images/home.png"); */
+  /* background-color: #718daa; */
+  color: azure;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+h3,
+a {
+  color: red;
+}
+
+h2 {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.45em;
+}
+
+.main-nav {
+  margin-top: 5px;
+}
+.logo a,
+.main-nav a {
+  padding: 10px 15px;
+  text-align: center;
+  display: block;
+}
+
+.main-nav a {
+  color: #34495e;
+  font-size: 0.99em;
+}
+
+.main-nav a:hover {
+  color: #718daa;
+}
+
+.header {
+  font-size: 20px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  background-color: white;
+  grid-area: header;
+}
+
+.header-text {
+  text-align: center;  
+  margin-top: 1000px;  
+}
+
+.header-text2 {
+  text-align: center;  
+}
+.general-text {
+  display:block;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+  .header,
+  .main-nav {
+    display: flex;
+  }
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1025px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 
 #map {
 	height: 100%;
+  
 }
 
 body {
   /* display:grid; */
 	display: grid;
-	grid-template-rows: 60px 1fr;
-	grid-template-columns: 300px 1fr;
+	grid-template-rows: 85px 50px 1fr;
+	grid-template-columns: 30% 70%;
 	grid-template-areas: 
 	"header header"
-	"content content"
-  "sidebar sidebar"
-
+  "topbar topbar"
+	"sidebar content"
 }
 
-.header {
-  grid-area: header;
+.topbar {
+  grid-area: topbar;
+  font-size: 18px;
+  text-align: center;
+  color: rgb(0, 0, 0);
 	padding:10px;
-	background-color: #333;
-	color: white;
-	font-size: 2.3em;
+	background-color: #ffe985;
 }
 
 .sidebar {
   grid-area: sidebar;
-  display:inline-block;
+  /* display:inline-block; */
+  display: flex;
+  flex-direction: column;
 	color: black;
-	padding:10px;
+	padding:15px;
 	background-color: rgb(255, 255, 255);
   width: fit-content;
   float: none;
@@ -142,7 +168,85 @@ body {
 	background-color: grey;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+}
 
+.col {
+  display: flex;
+  flex-direction: column;
+}
 .data {
   color: white;
 }
+
+.space {
+  margin-top: 15px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  display: flex;
+  flex-direction: row;
+  /* background-color: grey; */
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  /* padding: 10px; */
+  /* text-align: center; */
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  /* position: absolute; */
+  justify-content: space-between;
+  /* top: 50%; */
+  width: 15%;
+  /* margin-top: -30px; */
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+  text-align: center;
+  padding: 10px;
+  background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}

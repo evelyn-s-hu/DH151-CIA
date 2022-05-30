@@ -1,47 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>Home</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- style sheets -->
-<link rel="stylesheet" href="css/maproom.css">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- style sheets -->
+    <link rel="stylesheet" href="css/maproom.css" />
 
-<!-- leaflet -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- leaflet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-<!-- papaparse for csv data -->
-<script src="js/papaparse.min.js"></script>
-<!-- jquery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- papaparse for csv data -->
+    <script src="js/papaparse.min.js"></script>
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-</head>
-
-<header class="header">
-  <div class="logo"><a href="#">CIA</a></div>
-    <ul class="main-nav">
+  <body>
+    <header class="header">
+      <h1 class="logo"><a href="#">Crime Investigation Agency</a></h1>
+      <ul class="main-nav">
         <li><a href="home.html">Home</a></li>
         <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="maproom.html">Map Room</a></li>
+        <li><a href="maproom.html">Breakdown of Hate Crimes</a></li>
+        <li><a href="statemap.html">Bird's Eye View</a></li>
         <li><a href="data.html">Data Critique</a></li>
-    </ul>
-</header> 
-<body>
-<div class="sidebar">
-    <div class="sidebar-item" onclick="flyToIndex(34.0522,-118.2437)">Los Angeles</div>
-    <div class="sidebar-item" onclick="flyToIndex(39.7392,-104.9903)">Denver</div>
-    <div class="sidebar-item" onclick="flyToIndex(19.8968,-155.5828)">Hawaii</div>
-    <div class="sidebar-item" onclick="flyToIndex(41.8781,-87.6298)">Chicago</div>
-    <div class="sidebar-item" onclick="flyToIndex(39.9612,- 82.9988)">Columbus</div>
-    <div class="sidebar-item" onclick="flyToIndex(41.5801,-71.4774)">Rhode Island</div>
-    <div class="sidebar">
-        Sources: <a href="https://www.kaggle.com/datasets/louissebye/united-states-hate-crimes-19912017">United States Hate Crimes (1991-2018) Dataset</a> and <a href="https://simplemaps.com/data/us-cities">US Cities Database</a>
+      </ul>
+    </header>
+    <div class="topbar">
+      Toggle between the layers at the top right of the map to see the five
+      motivation categories.
     </div>
-</div>
-<div class="content">
-    <div id="map"></div>
-</div>
-<script src="js/maproom.js"></script>
-</body>
+    <div class="sidebar">
+      <div class="row">
+        <h2>Anti Hate Crime Motivation</h2>
+      </div>
+      <div class="row">
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+          <!-- Full-width slides/quotes -->
+          <div class="mySlides">
+            <p class="author">About the Map</p>
+            <div class="row">
+              Hate crimes were sorted into five motivation categories - Anti
+              Race, Anti Gender, Anti Ableism, Anti Religion and Anti Sexual
+              Orientation. Anti Race cases are red, Anti Gender cases are green,
+              Anti Sexual Orientation cases are blue, Anti Abelism cases are
+              pink and Anti Religion cases are purple. <br />
+            </div>
+
+            <div class="row">
+              <br />
+              Travel to some of America's largest metropolitan cities below by
+              clicking on their names.
+            </div>
+            <div class="space"></div>
+            <div class="sidebar-item" onclick="flyToIndex(34.0522,-118.2437)">
+              Los Angeles
+            </div>
+            <div class="sidebar-item" onclick="flyToIndex(39.7392,-104.9903)">
+              New York City
+            </div>
+            <div class="sidebar-item" onclick="flyToIndex(32.7767,-96.7970)">
+              Dallas
+            </div>
+            <div class="sidebar-item" onclick="flyToIndex(47.7511,-120.7401)">
+              Washington
+            </div>
+            <div class="sidebar-item" onclick="flyToIndex(39.9526,-75.1652)">
+              Philadelphia
+            </div>
+            <div class="sidebar-item" onclick="flyToIndex(25.7617,-80.1918)">
+              Miami
+            </div>
+          </div>
+          <div class="mySlides">
+            <p class="author">Key Finding 1: Motivations aren't equally distributed across hate crimes </p>
+            Across the United States, there are a significantly less number of Anti Gender motivated hate crimes as there are Anti Race motivated hate crimes. 
+          </div>
+
+          <div class="mySlides">
+            <p class="author">Key Finding 2: Motivations aren't equally distributed across cities </p>
+            Across the United States, a city like Seattle will have a greater density of Anti Religion motivated hate crimes compared to other motivated hate crimes.
+          </div>
+
+          <div class="mySlides">
+            <p class="author">Specific Motivation Key Findings </p>
+            <b>Anti Race Motivated Hate Crimes </b> are the most commonly motivated hate crimes across the United States. There is a higher density of cases on the East Coast in comparison to Central United States and the West Coast.
+          </div>
+
+          <div class="mySlides">
+            <p class="author">Sources</p>
+  
+                We used two sources: the
+                <a
+                  href="https://www.kaggle.com/datasets/louissebye/united-states-hate-crimes-19912017"
+                >
+                  United States Hate Crimes (1991-2018) Dataset
+                </a>
+                detailed all the hate crimes from 1991-2018 which we then sorted and assigned longitude and latitude to each city using 
+                <a href="https://simplemaps.com/data/us-cities"
+                  >US Cities Database</a
+                >
+          </div>
+          <!-- Next/prev buttons -->
+        </div>
+      </div>
+      <div class="space"></div>
+      <div class="row">
+        <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+        <div class="next" onclick="plusSlides(1)">&#10095;</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div id="map"></div>
+    </div>
+    <script src="js/maproom.js"></script>
+  </body>
 </html>
