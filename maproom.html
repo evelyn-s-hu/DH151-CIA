@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home</title>
+    <title>Breakdown of Hate Crimes</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- style sheets -->
@@ -36,13 +36,10 @@
       </ul>
     </header>
     <div class="topbar">
-      Toggle between the layers at the top right of the map to see the five
-      motivation categories.
+      This point map shows the breakdown of all hate crimes by state from 2010 to 2018.  <br>
+      The hate crimes were classified into five categories, each with its own layer that can be toggled on and off at the top right of the map.  
     </div>
     <div class="sidebar">
-      <div class="row">
-        <h2>Anti Hate Crime Motivation</h2>
-      </div>
       <div class="row">
         <!-- Slideshow container -->
         <div class="slideshow-container">
@@ -50,51 +47,50 @@
           <div class="mySlides">
             <p class="author">About the Map</p>
             <div class="row">
-              Hate crimes were sorted into five motivation categories - Anti
-              Race, Anti Gender, Anti Ableism, Anti Religion and Anti Sexual
-              Orientation. Anti Race cases are red, Anti Gender cases are green,
-              Anti Sexual Orientation cases are blue, Anti Abelism cases are
-              pink and Anti Religion cases are purple. <br />
+              Hate crimes were sorted into five categories - Anti-Race, Anti-Gender, Anti-Ableism, Anti-Religion and Anti-Sexual Orientation hate crimes. On the map, Anti-Race cases are in red, Anti-Gender cases are in green, Anti-Sexual Orientation cases are in blue, Anti-Abelism cases are in pink and Anti-Religion cases are in purple. Each category is a layer on the map which can be toggled on and off. When the desired layer is toggled on, click on the city to view the breakdown of hate crimes by specific motivations (e.g. anti-Asian, anti-gay). <br />
             </div>
 
             <div class="row">
               <br />
-              Travel to some of America's largest metropolitan cities below by
-              clicking on their names.
+              Travel to some of America's largest metropolitan cities by clicking on their names below.
             </div>
             <div class="space"></div>
             <div class="sidebar-item" onclick="flyToIndex(34.0522,-118.2437)">
               Los Angeles
             </div>
-            <div class="sidebar-item" onclick="flyToIndex(39.7392,-104.9903)">
+            <div class="sidebar-item" onclick="flyToIndex(40.7128, -74.0060)">
               New York City
             </div>
             <div class="sidebar-item" onclick="flyToIndex(32.7767,-96.7970)">
               Dallas
             </div>
-            <div class="sidebar-item" onclick="flyToIndex(47.7511,-120.7401)">
-              Washington
+            <div class="sidebar-item" onclick="flyToIndex(47.6062, -122.3321)">
+              Seattle
             </div>
-            <div class="sidebar-item" onclick="flyToIndex(39.9526,-75.1652)">
-              Philadelphia
+            <div class="sidebar-item" onclick="flyToIndex(41.8781, -87.6928)">
+              Chicago
             </div>
             <div class="sidebar-item" onclick="flyToIndex(25.7617,-80.1918)">
               Miami
             </div>
+            <br><br><br><br><br><br>
+
+            1/5
           </div>
+          
           <div class="mySlides">
-            <p class="author">Key Finding 1: Motivations aren't equally distributed across hate crimes </p>
-            Across the United States, there are a significantly less number of Anti Gender motivated hate crimes as there are Anti Race motivated hate crimes. 
+            <p class="author">Key Finding 1: There are significantly more Anti-Race and Anti-Sexual Orientation hate crimes.</p>
+            Across the United States, the number of hate crimes are not equally distributed among the five main categories of hate crimes. Notably, there are significantly more Anti-Race and Anti-Sexual Orientation hate crimes than the other three categories. 
           </div>
 
           <div class="mySlides">
-            <p class="author">Key Finding 2: Motivations aren't equally distributed across cities </p>
-            Across the United States, a city like Seattle will have a greater density of Anti Religion motivated hate crimes compared to other motivated hate crimes.
+            <p class="author">Key Finding 2: The five different categories of hate crimes are not equally distributed across cities. </p>
+            While large cities are more likely to have higher rates of hate crimes in general, some cities such as Los Angeles, New York City and Boston have large numbers of all five categories of hate crimes, while others such as Dallas, San Diego and Philadelphia have a high number of hate crimes for certain categories but not others. This suggests that population density alone is not enough to explain high levels of hate crime and that other underlying social tensions and dynamics should be explored. 
           </div>
 
           <div class="mySlides">
-            <p class="author">Specific Motivation Key Findings </p>
-            <b>Anti Race Motivated Hate Crimes </b> are the most commonly motivated hate crimes across the United States. There is a higher density of cases on the East Coast in comparison to Central United States and the West Coast.
+            <p class="author">Data Critique </p>
+            While it may seem like there are more hate crimes happening on the West and East coasts than the Midwest or Central U.S., this could be due to the fact that the map only reflects hate crimes that were officially reported and recorded by authorities. We acknowledge that hate crimes are statistically underreported, especially for certain groups at risk, and that this map would not be able to represent those hate crimes accurately.
           </div>
 
           <div class="mySlides">
@@ -106,10 +102,9 @@
                 >
                   United States Hate Crimes (1991-2018) Dataset
                 </a>
-                detailed all the hate crimes from 1991-2018 which we then sorted and assigned longitude and latitude to each city using 
+                detailed all the hate crimes in our maps from 2010 to 2018, which we then assigned longitude and latitude to each city using
                 <a href="https://simplemaps.com/data/us-cities"
-                  >US Cities Database</a
-                >
+                  >US Cities Database</a>. 
           </div>
           <!-- Next/prev buttons -->
         </div>

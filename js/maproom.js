@@ -149,11 +149,11 @@ function plotMap() {
           `<h3>${item.city}</h3>
      <p><strong>Anti-Bisexual: </strong>${item.bi}</p>
      <p><strong>Anti-Gay Male: </strong>${item.gay}</p>
-     <p><strong>Anti_Heterosexual: </strong>${item.hetero}</p>
+     <p><strong>Anti-Heterosexual: </strong>${item.hetero}</p>
      <p><strong>Anti-Arab: </strong>${item.arab}</p>
      <p><strong>Anti-Lesbian-Female: </strong>${item.lesbian}</p>
      <p><strong>Anti-Lesbian Gay Bisexual or Transgender Mixed Group: </strong>${item.lestrans}</p>
-     <p><strong>Anti-Transgender:</strong>${item.trans}</p>`
+     <p><strong>Anti-Transgender: </strong>${item.trans}</p>`
         )
         .openPopup();
       // add marker to featuregroup
@@ -221,9 +221,9 @@ function plotMap() {
       let ablemarker = L.circleMarker([item.lat, item.long], circleOptions)
         .bindPopup(
           `<h3>${item.city}</h3>
-        <p><strong>Anti-Female: </strong>${item.female}</p>
-        <p><strong>Anti-Male: </strong>${item.male}</p>
-        <p><strong>Anti-Gender Non-Conforming: </strong>${item.nonconform}</p>`
+        <p><strong>Anti-Ableism: </strong>${item.abletotal}</p>
+        <p><strong>Anti-Mental Disability: </strong>${item.mental}</p>
+        <p><strong>Anti-Physical Disability: </strong>${item.physical}</p>`
         )
         .openPopup();
       // add marker to featuregroup
