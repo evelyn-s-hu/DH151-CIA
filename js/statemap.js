@@ -20,6 +20,7 @@ $( document ).ready(function() {
     createMap(lat,lon,zl);
     // here you have to run all functions that you create later on 
     getGeoJSON();
+
 });
 
 // create the map
@@ -132,7 +133,7 @@ function onEachFeature(feature, layer) {
 // on mouse over, highlight the feature
 function highlightFeature(e) {
 	var layer = e.target;
-
+	// console.log(layer);
 	// style to use on mouse over
 	layer.setStyle({
 		weight: 2,
@@ -187,6 +188,8 @@ function createInfoPanel(){
 	};
 
 	info_panel.addTo(map);
+	newsArticles();
+
 }
 
 function createDashboard(properties){
@@ -276,4 +279,17 @@ function createDashboard(properties){
 	// create the chart
 	let chart = new ApexCharts(document.querySelector('.dashboard'), options)
 	chart.render()
+	
+}
+
+
+function newsArticles(){
+	var myDiv = document.getElementsByClassName("info");
+	console.log(myDiv[2]);
+
+	/*whatever u want to change inside the info tab content u can just do it here by changing what is inside the content to show*/
+	myDiv[2].innerHTML = "Content To Show";
+
+	/*https://stackoverflow.com/questions/36859062/how-to-set-image-via-innerhtml just search stuff related to innerhtml if u need help*/
+
 }
