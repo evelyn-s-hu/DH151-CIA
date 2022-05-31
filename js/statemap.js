@@ -312,8 +312,7 @@ function newsArticles(){
 
 	// var article = `${properties.NAME} (${properties.total_cases} hate crimes)`
 	/*whatever u want to change inside the info tab content u can just do it here by changing what is inside the content to show*/
-	myDiv[2].innerHTML = "<h2>Hate Crimes News Articles: </h2>" + paragraph1 + "<br><br>" + paragraph2;
-	// + "<br><br>" + paragraph3;
+	myDiv[2].innerHTML = "<h2>Hate Crimes News Articles: </h2>" + paragraph1 + "<br><br>" + paragraph2 + "<br><br>" + paragraph3;
 
 	/*https://stackoverflow.com/questions/36859062/how-to-set-image-via-innerhtml just search stuff related to innerhtml if u need help*/
 
