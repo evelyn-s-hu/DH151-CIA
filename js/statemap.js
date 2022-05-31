@@ -8,6 +8,8 @@ let path = '';
 let geojsonPath = 'data/statemapdata_may21.geojson';
 let geojson_data;
 let geojson_layer;
+let newsPath = 'data/HateNewsArticles.csv';
+let state;
 
 let brew = new classyBrew();
 
@@ -194,6 +196,7 @@ function createInfoPanel(){
 
 function createDashboard(properties){
 	console.log(properties)
+	// state = properties.NAME
 }
 
 // CHART
@@ -282,13 +285,35 @@ function createDashboard(properties){
 	
 }
 
+// function getNewsArticles()
+// {
+// }
 
 function newsArticles(){
 	var myDiv = document.getElementsByClassName("info");
 	console.log(myDiv[2]);
+	var articleTitle = "Hate Crime Charges Filed In Attack on California Sikh Man"
+	var articleImage = "<img src=https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2016_41/1744096/maansinghkhalsa1.jpg>"
+	var articleLink = "<a href=https://www.nbcnews.com/news/asian-america/hate-crime-charges-filed-attack-california-sikh-man-n666651>"
+	var articleDate = " October 14, 2016"
+	var article2 = "Man Charged With Hate Crime After Allegedly Threatening Muslim NYPD Officer"
+	var article2Image = "<img src=https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1120w,f_auto,q_auto:best/newscms/2016_49/1821006/161205_muslim_cop_attacked.jpg>"
+	var article2Link = "<a href=https://www.nbcnews.com/news/asian-america/man-charged-hate-crime-after-allegedly-threatening-muslim-nypd-officer-n692171>"
+	var article2Date = "December 5, 2016"
+	var article3 = "Kansas man charged with hate crime in fatal shooting of Indian engineer"
+	var article3Image = "<img src=https://cbsnews1.cbsistatic.com/hub/i/2017/06/09/4b4c8012-a5ac-4171-9abc-4d8aadc434a4/ap-17160763141630.jpg>"
+	var article3Link = "<a href=https://www.cbsnews.com/news/adam-purinton-faces-hate-crime-charges-in-fatal-shooting-of-indian-engineer/>"
+	var article3Date = "June 9, 2017"
+	var paragraph1 ="<u>" + articleLink + articleTitle + "</a>"+"</u>" + "<br>" + articleDate + "<br><br>" + articleImage;
+	var paragraph2 = "<u>" + article2Link + article2 + "</a>"+"</u>" + "<br>" + article2Date + "<br><br>" + article2Image;
+	var paragraph3 ="<u>" + article3Link + article3 + "</a>"+"</u>" + "<br>" + article3Date + "<br><br>" + article3Image;
+	
+	// articledata = [""]
 
+	// var article = `${properties.NAME} (${properties.total_cases} hate crimes)`
 	/*whatever u want to change inside the info tab content u can just do it here by changing what is inside the content to show*/
-	myDiv[2].innerHTML = "Content To Show";
+	myDiv[2].innerHTML = "<h2>Hate Crimes News Articles: </h2>" + paragraph1 + "<br><br>" + paragraph2;
+	// + "<br><br>" + paragraph3;
 
 	/*https://stackoverflow.com/questions/36859062/how-to-set-image-via-innerhtml just search stuff related to innerhtml if u need help*/
 
