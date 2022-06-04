@@ -174,7 +174,7 @@ function createInfoPanel(){
 
 	// method that we will use to update the control based on feature properties passed
 	info_panel.update = function (properties) {
-		this._div.innerHTML = 'Hover over a state to get information on the total crimes committed.';
+		this._div.innerHTML = 'Hover over a state to get more information on the hate crimes committed in that state from 2010-2018.';
 		
 		/* since we have the chart, do without the hover-action showing the total number of cases. code for that: 
 		// if feature is highlighted
