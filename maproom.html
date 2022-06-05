@@ -36,8 +36,9 @@
       </ul>
     </header>
     <div class="topbar">
-      This point map shows the breakdown of hate crimes by state and type/motivations from 2010 to 2018. <br>
-      Refer to the sidebar for instructions on how to use the map. 
+      This point map shows the breakdown of hate crimes by state and
+      type/motivations from 2010 to 2018. <br />
+      Refer to the sidebar for instructions on how to use the map.
     </div>
     <div class="sidebar">
       <div class="row">
@@ -47,62 +48,77 @@
           <div class="mySlides">
             <p class="author">About the Map</p>
             <div class="row">
-              The hate crimes are classified into five types, each with its own layer that can be toggled on and off at the top right of the map. The five types/motivations for the hate crimes are: Anti-Race, Anti-Gender, Anti-Ableism, Anti-Religion and Anti-Sexual Orientation. The legend shows the colors which correspond with each type of hate crime. <br /> 
-              <br /> The size of the point corresponds with the number of hate crimes for a particular city. When the desired layer is toggled on, click on a point (aka a city) to view the breakdown of hate crimes by type/motivations. <br />
-            </div>
+              <div class="col">
+                <div>
+                  The hate crimes are classified into 5 types, each with its own
+                  layer that can be toggled on and off at the top right of the map.
+                  The five motivations for the hate crimes are: Anti-Race,
+                  Anti-Gender, Anti-Ableism, Anti-Religion and Anti-Sexual
+                  Orientation. The legend shows the colors which correspond with
+                  each type of hate crime. <br />
+                  <br />
+                  <img src="images/legend.png">
 
-            <div class="row">
-              <br />
-              Check out the breakdown of hate crimes in some of America's largest metropolitan cities by clicking on their names below.
+                  The size of the point corresponds with the number of hate crimes
+                  for a particular city. When the desired layer is toggled on, click
+                  on a point to view the breakdown of hate crimes by
+                  type/motivations. <br />
+                </div>
+              </div>
             </div>
-            <div class="space"></div>
-            <div class="sidebar-item" onclick="flyToIndex(34.0522,-118.2437)">
-              Los Angeles
-            </div>
-            <div class="sidebar-item" onclick="flyToIndex(40.7128, -74.0060)">
-              New York City
-            </div>
-            <div class="sidebar-item" onclick="flyToIndex(32.7767,-96.7970)">
-              Dallas
-            </div>
-            <div class="sidebar-item" onclick="flyToIndex(47.6062, -122.3321)">
-              Seattle
-            </div>
-            <div class="sidebar-item" onclick="flyToIndex(41.8781, -87.6928)">
-              Chicago
-            </div>
-            <div class="sidebar-item" onclick="flyToIndex(25.7617,-80.1918)">
-              Miami
-            </div>
-          </div>
-          
-          <div class="mySlides">
-            <p class="author">Key Finding 1: There are significantly more Anti-Race and Anti-Sexual Orientation hate crimes.</p>
-            Across the United States, the number of hate crimes are not equally distributed among the five main categories of hate crimes. Notably, there are significantly more Anti-Race and Anti-Sexual Orientation hate crimes than the other three categories. 
           </div>
 
           <div class="mySlides">
-            <p class="author">Key Finding 2: The five different categories of hate crimes are not equally distributed across cities. </p>
-            While large cities are more likely to have higher rates of hate crimes in general, some cities such as Los Angeles, New York City and Boston have large numbers of all five categories of hate crimes, while others such as Dallas, San Diego and Philadelphia have a high number of hate crimes for certain categories but not others. This suggests that population density alone is not enough to explain high levels of hate crime and that other underlying social tensions and dynamics should be explored. 
+            <p class="author">
+              Key Finding 1: There are significantly more Anti-Race and
+              Anti-Sexual Orientation hate crimes.
+            </p>
+            Across the United States, the number of hate crimes are not equally
+            distributed among the five main categories of hate crimes. Notably,
+            there are significantly more Anti-Race and Anti-Sexual Orientation
+            hate crimes than the other three categories.
           </div>
 
           <div class="mySlides">
-            <p class="author">Data Critique </p>
-            While it may seem like there are more hate crimes happening on the West and East coasts than the Midwest or Central U.S., this could be due to the fact that the map only reflects hate crimes that were officially reported and recorded by authorities. We acknowledge that hate crimes are statistically underreported, especially for certain groups at risk, and that this map would not be able to represent those hate crimes accurately.
+            <p class="author">
+              Key Finding 2: The five different categories of hate crimes are
+              not equally distributed across cities.
+            </p>
+            While large cities are more likely to have higher rates of hate
+            crimes in general, some cities such as Los Angeles, New York City
+            and Boston have large numbers of all five categories of hate crimes,
+            while others such as Dallas, San Diego and Philadelphia have a high
+            number of hate crimes for certain categories but not others. This
+            suggests that population density alone is not enough to explain high
+            levels of hate crime and that other underlying social tensions and
+            dynamics should be explored.
+          </div>
+
+          <div class="mySlides">
+            <p class="author">Data Critique</p>
+            While it may seem like there are more hate crimes happening on the
+            West and East coasts than the Midwest or Central U.S., this could be
+            due to the fact that the map only reflects hate crimes that were
+            officially reported and recorded by authorities. We acknowledge that
+            hate crimes are statistically underreported, especially for certain
+            groups at risk, and that this map would not be able to represent
+            those hate crimes accurately.
           </div>
 
           <div class="mySlides">
             <p class="author">Sources</p>
-  
-                We used two sources: the
-                <a
-                  href="https://www.kaggle.com/datasets/louissebye/united-states-hate-crimes-19912017"
-                >
-                  United States Hate Crimes (1991-2018) Dataset
-                </a>
-                detailed all the hate crimes in our maps from 2010 to 2018, which we then assigned longitude and latitude to each city using
-                <a href="https://simplemaps.com/data/us-cities"
-                  >US Cities Database</a>. 
+
+            We used two sources: the
+            <a
+              href="https://www.kaggle.com/datasets/louissebye/united-states-hate-crimes-19912017"
+            >
+              United States Hate Crimes (1991-2018) Dataset
+            </a>
+            detailed all the hate crimes in our maps from 2010 to 2018, which we
+            then assigned longitude and latitude to each city using
+            <a href="https://simplemaps.com/data/us-cities"
+              >US Cities Database</a
+            >.
           </div>
           <!-- Next/prev buttons -->
         </div>
@@ -116,6 +132,28 @@
 
     <div class="content">
       <div id="map"></div>
+      <div class="row">
+        Check out the breakdown of hate crimes in some of America's largest
+        metropolitan cities by clicking on their names below.
+      </div>
+      <div class="sidebar-item" onclick="flyToIndex(34.0522,-118.2437)">
+        Los Angeles
+      </div>
+      <div class="sidebar-item" onclick="flyToIndex(40.7128, -74.0060)">
+        New York City
+      </div>
+      <div class="sidebar-item" onclick="flyToIndex(32.7767,-96.7970)">
+        Dallas
+      </div>
+      <div class="sidebar-item" onclick="flyToIndex(47.6062, -122.3321)">
+        Seattle
+      </div>
+      <div class="sidebar-item" onclick="flyToIndex(41.8781, -87.6928)">
+        Chicago
+      </div>
+      <div class="sidebar-item" onclick="flyToIndex(25.7617,-80.1918)">
+        Miami
+      </div>
     </div>
     <script src="js/maproom.js"></script>
   </body>

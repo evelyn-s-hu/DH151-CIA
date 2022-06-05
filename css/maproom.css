@@ -115,7 +115,7 @@ a {
 
 
 #map {
-	height: 100%;
+	height: 80%;
   
 }
 
@@ -153,6 +153,7 @@ body {
 
 .content {
 	grid-area: content;
+  color: black;
 }
 
 .sidebar-item{
@@ -252,4 +253,8 @@ q {font-style: italic;}
 .author {
   color: #ec3c3c;
   font-size: 25px;
+}
+
+.places {
+  align-items: center;
 }
