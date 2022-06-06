@@ -38,9 +38,12 @@ ul {
 
 
 h2,
-h3,
 a {
   color: red;
+}
+
+h3 {
+  color: black;
 }
 
 a {
@@ -112,6 +115,21 @@ a {
 
 .info{
   margin-left:10px;
+}
+
+.row {
+  display: flex;
+  
+  }
+  
+.column {
+  flex: 50%;
+  text-align: center;
+}
+
+.column img{
+  width: 100px;
+  height: 100px;
 }
 
 /* ================================= 
